@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
+  <!-- Left half of D (tan/brown) -->
+  <path d="M30 20 L80 20 L80 60 L30 60 L30 180 L80 180 L80 220 L30 220 Z" fill="#B8A088"/>
+  <!-- Right half of D (dark gray arc) -->
+  <path d="M80 20 Q180 20 180 120 Q180 220 80 220 L80 180 Q140 180 140 120 Q140 60 80 60 Z" fill="#4A4048"/>
+  <!-- Growth line -->
+  <line x1="50" y1="175" x2="85" y2="115" stroke="#4A4048" stroke-width="5" stroke-linecap="round"/>
+  <line x1="85" y1="115" x2="120" y2="80" stroke="#4A4048" stroke-width="5" stroke-linecap="round"/>
+  <line x1="120" y1="80" x2="145" y2="45" stroke="#4A4048" stroke-width="5" stroke-linecap="round"/>
+  <!-- Data points -->
+  <circle cx="50" cy="175" r="8" fill="#4A4048"/>
+  <circle cx="85" cy="115" r="8" fill="#4A4048"/>
+  <circle cx="120" cy="80" r="8" fill="#4A4048"/>
+  <circle cx="145" cy="45" r="8" fill="#4A4048"/>
+</svg>

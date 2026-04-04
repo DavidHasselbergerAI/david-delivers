@@ -3,25 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>David Delivers — AI Growth for Small Business</title>
-  <meta name="description" content="David Delivers uses AI agents to grow your small business — leads, marketing, upselling, and appointment setting on autopilot." />
+  <title>David Delivers — AI Growth for E-Commerce & Online Brands</title>
+  <meta name="description" content="David Delivers deploys AI agents that recover abandoned carts, retain customers, and grow your online brand. Performance-based — you pay nothing until we deliver results." />
 
   <!-- OG / Social Preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="David Delivers — AI Growth for Small Business" />
-  <meta property="og:description" content="AI agents that generate leads, run your marketing, upsell your customers, and book your appointments — 24/7, without hiring anyone." />
+  <meta property="og:title" content="David Delivers — AI Growth for E-Commerce & Online Brands" />
+  <meta property="og:description" content="77% of shoppers abandon their cart. CAC is up 60%. We deploy AI agents that recover lost revenue and grow your store — you pay nothing until we deliver." />
   <meta property="og:url" content="https://davidhasselbergerai.github.io/david-delivers/" />
   <meta property="og:image" content="https://davidhasselbergerai.github.io/david-delivers/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="David Delivers — AI Growth for Small Business" />
-  <meta name="twitter:description" content="AI agents that generate leads, run your marketing, upsell your customers, and book your appointments — 24/7, without hiring anyone." />
+  <meta name="twitter:title" content="David Delivers — AI Growth for E-Commerce & Online Brands" />
+  <meta name="twitter:description" content="77% of shoppers abandon their cart. CAC is up 60%. We deploy AI agents that recover lost revenue and grow your store — you pay nothing until we deliver." />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="david_delivers_logo.png" />
+  <link rel="apple-touch-icon" href="david_delivers_logo.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Calendly -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -57,20 +63,38 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 22px 60px;
+      padding: 8px 60px;
       background: rgba(245,245,220,0.92);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
     .logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 108px; width: auto;
+    }
+    .logo-text {
+      display: flex; flex-direction: column;
+    }
+    .logo-name {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.5rem; font-weight: 900;
+      font-size: 1.35rem; font-weight: 900;
       color: var(--brown-deep);
       letter-spacing: -0.5px;
+      line-height: 1.1;
     }
-    .logo em {
+    .logo-name em {
       font-style: normal;
       color: var(--gold);
+    }
+    .logo-tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--brown-warm);
+      margin-top: 2px;
     }
     .nav-links {
       display: flex; align-items: center; gap: 36px;
@@ -161,12 +185,7 @@
       position: relative;
     }
     .hero-card::before {
-      content: '';
-      position: absolute;
-      top: -8px; right: -8px;
-      width: 100%; height: 100%;
-      border: 1px solid var(--gold);
-      pointer-events: none;
+      display: none;
     }
     .hero-card-label {
       font-size: 0.72rem; font-weight: 700;
@@ -265,6 +284,64 @@
     .stat-num span { color: var(--gold); }
     .stat-label { font-size: 0.82rem; color: var(--muted); font-weight: 500; line-height: 1.5; }
 
+    /* ── COMPARISON ── */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 0;
+    }
+    .compare-card {
+      padding: 56px 52px;
+    }
+    .compare-them {
+      background: #3a2114;
+      color: rgba(245,239,228,0.5);
+    }
+    .compare-us {
+      background: var(--brown-deep);
+      color: var(--cream);
+      border-left: 3px solid var(--gold);
+    }
+    .compare-label {
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .compare-them .compare-label { color: rgba(245,239,228,0.35); }
+    .compare-us .compare-label { color: var(--gold-light); }
+    .compare-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem; font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+    .compare-them h3 { color: rgba(245,239,228,0.6); }
+    .compare-us h3 { color: var(--cream); }
+    .compare-list {
+      list-style: none; padding: 0;
+    }
+    .compare-list li {
+      padding: 10px 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .compare-list li::before {
+      flex-shrink: 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .compare-them .compare-list li::before {
+      content: '\2717';
+      color: #c0735a;
+    }
+    .compare-us .compare-list li::before {
+      content: '\2713';
+      color: var(--gold);
+    }
+
     /* ── SECTION SHARED ── */
     section { padding: 100px 60px; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
@@ -341,6 +418,49 @@
       color: var(--brown-warm);
     }
 
+    /* ── PILLAR DETAIL ── */
+    .pillar-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+      line-height: 1;
+    }
+    .pillar-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .pillar-bullets li {
+      padding: 8px 0;
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pillar-bullets li:last-child { border-bottom: none; }
+    .pillar-bullets li::before {
+      content: '→';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 0.85rem;
+      margin-top: 1px;
+    }
+    .pillar-result {
+      background: var(--cream-dark);
+      border-left: 3px solid var(--gold);
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--brown);
+      margin-bottom: 20px;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
     /* ── HOW IT WORKS ── */
     .how-bg { background: var(--brown-deep); }
     .how-bg .section-eyebrow { color: var(--gold-light); }
@@ -390,12 +510,110 @@
       padding: 10px 18px;
       font-size: 0.88rem; font-weight: 500;
       color: var(--muted);
-      transition: all 0.2s; cursor: default;
+      transition: all 0.2s; cursor: pointer;
     }
-    .niche-tag:hover {
+    .niche-tag:hover,
+    .niche-tag.active {
       background: var(--brown-deep);
       border-color: var(--brown-deep);
       color: var(--cream);
+    }
+    .niche-detail {
+      margin-top: 28px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      padding: 32px 36px;
+      display: none;
+      animation: fadeDetail 0.3s ease;
+    }
+    .niche-detail.show { display: block; }
+    /* Scroll fade-in */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeDetail {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .niche-detail h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--brown-deep);
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+    .niche-detail ul {
+      list-style: none; padding: 0;
+    }
+    .niche-detail li {
+      padding: 8px 0;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .niche-detail li::before {
+      content: '\2713';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── FAQ ── */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+    }
+    .faq-item {
+      background: var(--cream);
+      padding: 36px 40px;
+      cursor: pointer;
+      transition: background 0.25s;
+    }
+    .faq-item:hover { background: var(--cream-dark); }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-question h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--brown-deep);
+      letter-spacing: -0.3px;
+    }
+    .faq-toggle {
+      font-size: 1.4rem;
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+    .faq-answer p {
+      padding-top: 20px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.8;
     }
 
     /* ── FINAL CTA ── */
@@ -473,7 +691,10 @@
       .pillars { grid-template-columns: 1fr; }
       .steps { grid-template-columns: 1fr 1fr; }
       .step { border-bottom: 1px solid rgba(245,239,228,0.1); }
+      .compare { grid-template-columns: 1fr; }
+      .compare-us { border-left: none; border-top: 3px solid var(--gold); }
       .for-grid { grid-template-columns: 1fr; gap: 40px; }
+      .faq-grid { grid-template-columns: 1fr; }
       .cta-inner { grid-template-columns: 1fr; }
       .cta-inner::before { display: none; }
       .cta-left, .cta-right { padding: 48px 32px; }
@@ -490,159 +711,351 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">David <em>Delivers</em></div>
+    <div class="logo">
+      <img src="david_delivers_logo.png" alt="David Delivers logo" />
+      <div class="logo-text">
+        <span class="logo-name">David <em>Delivers</em></span>
+        <span class="logo-tagline">We Deliver Results</span>
+      </div>
+    </div>
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="#process">Process</a>
-      <a href="#waitlist">Join Waitlist</a>
+      <a href="#faq">FAQ</a>
     </div>
-    <a href="#waitlist" class="nav-cta">Get Early Access</a>
+    <a href="" onclick="Calendly.initPopupWidget({url: CALENDLY_URL});return false;" class="nav-cta">Book Free Call</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero" style="padding-top:140px;">
     <div class="hero-left">
-      <div class="hero-eyebrow">Now accepting founding clients</div>
-      <h1>Grow Your Business.<br/>Let <em>AI</em> Do<br/>the Work.</h1>
-      <p class="hero-sub">David Delivers builds custom AI systems that generate leads, handle your marketing, upsell your customers, and book your appointments — running 24/7 in the background while you focus on what you do best.</p>
+      <div class="hero-eyebrow">Built for E-Commerce &amp; Online Brands</div>
+      <h1>Stop Losing Revenue<br/>You Already <em>Earned.</em></h1>
+      <p class="hero-sub">77% of your shoppers leave without buying. CAC is up 60%. Your email list is sitting there untouched. We deploy AI agents that recover abandoned carts, retain customers, and grow your online brand — you pay nothing until we deliver real results.</p>
       <div style="display:flex;gap:16px;flex-wrap:wrap;">
-        <a href="#waitlist" class="nav-cta" style="display:inline-block;">Join the Waitlist</a>
-        <a href="#services" style="display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--brown-mid);text-decoration:none;padding:11px 0;border-bottom:1px solid var(--border);">See What We Do →</a>
+        <a href="#services" style="display:inline-flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--brown-mid);text-decoration:none;padding:11px 0;border-bottom:1px solid var(--border);">See How It Works →</a>
       </div>
     </div>
 
     <div class="hero-right">
       <div class="hero-card">
-        <div class="hero-card-label">Waitlist Now Open</div>
-        <h2>Lock In Founding Member Pricing</h2>
-        <form class="waitlist-form" id="wlForm">
-          <input type="email" name="email" placeholder="Your business email" required autocomplete="email" />
-          <button type="submit">Claim Your Spot</button>
-        </form>
-        <div class="success-msg" id="successMsg">✓ You're in. We'll reach out within 24 hours.</div>
-        <p class="form-note">No credit card. No spam. Priority access guaranteed.</p>
+        <div class="hero-card-label">Now Accepting Online Brands</div>
+        <h2>Get a Free Revenue Recovery Audit</h2>
+        <p style="color:rgba(245,239,228,0.6);font-size:0.95rem;line-height:1.7;margin-bottom:28px;">In 10 minutes, we'll show you exactly how much revenue your store is leaking — and which AI agents will recover it first. Zero cost, zero commitment.</p>
+        <a href="" onclick="Calendly.initPopupWidget({url: CALENDLY_URL});return false;" class="nav-cta" style="display:block;text-align:center;background:var(--gold);color:var(--brown-deep);padding:16px;font-size:0.85rem;font-weight:800;letter-spacing:1.5px;">Book Your Free Audit</a>
+        <p class="form-note">No commitment. No pressure. Just a conversation.</p>
+        <div style="border-top:1px solid rgba(245,239,228,0.15);margin-top:28px;padding-top:20px;">
+          <p style="font-size:0.75rem;color:rgba(245,239,228,0.45);text-align:center;margin-bottom:12px;">Not ready to talk? Join the waitlist instead:</p>
+          <form class="waitlist-form" id="wlForm">
+            <input type="email" name="email" placeholder="Your store email" required autocomplete="email" />
+            <button type="submit" style="background:rgba(245,239,228,0.15);color:var(--cream);">Join Waitlist</button>
+          </form>
+          <div class="success-msg" id="successMsg">✓ You're in. We'll reach out within 24 hours.</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- STATS -->
-  <div class="stats-strip">
+  <div class="stats-strip fade-in">
     <div class="stat">
-      <div class="stat-num">4<span>×</span></div>
-      <div class="stat-label">AI Systems working for your business simultaneously</div>
+      <div class="stat-num">77<span>%</span></div>
+      <div class="stat-label">Average cart abandonment rate — we recover what your store is already losing</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">60<span>%</span></div>
+      <div class="stat-label">Of DTC revenue comes from repeat buyers — our agents are built around this fact</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><span>$</span>0</div>
+      <div class="stat-label">Upfront, ever — we earn only a percentage of the new revenue we generate for you</div>
     </div>
     <div class="stat">
       <div class="stat-num">24<span>/7</span></div>
-      <div class="stat-label">Always-on agents — never sleep, never take a day off</div>
+      <div class="stat-label">AI agents running your store's growth while you sleep, ship, and scale</div>
     </div>
-    <div class="stat">
-      <div class="stat-num">3<span>×</span></div>
-      <div class="stat-label">Average lead increase for clients in the first 90 days</div>
+  </div>
+
+  <!-- COMPARISON -->
+  <div class="compare fade-in">
+    <div class="compare-card compare-them">
+      <div class="compare-label">What Everyone Else Does</div>
+      <h3>Spend More on Ads.<br/>Hope It Works Out.</h3>
+      <ul class="compare-list">
+        <li>Pay $3K–$10K/month to ad agencies driving traffic that bounces</li>
+        <li>CAC keeps rising — you're paying more to acquire customers who don't return</li>
+        <li>Abandoned carts pile up with no automated recovery system in place</li>
+        <li>Your email list sits untouched or gets generic blasts that don't convert</li>
+        <li>Customers buy once and disappear — no retention system, no win-backs</li>
+      </ul>
     </div>
-    <div class="stat">
-      <div class="stat-num">80<span>%</span></div>
-      <div class="stat-label">Of growth tasks fully automated — zero extra headcount</div>
+    <div class="compare-card compare-us">
+      <div class="compare-label">David Delivers</div>
+      <h3>Monetize What<br/>You Already Have.</h3>
+      <ul class="compare-list">
+        <li>$0 upfront — we take only a percentage of new revenue we generate</li>
+        <li>We recover your abandoned carts, lapsed customers, and untapped list</li>
+        <li>Every message is in your brand voice — customers never know it's AI</li>
+        <li>AI agents built specifically for your store, your products, your audience</li>
+        <li>Running 24/7 — recovering revenue while you sleep</li>
+      </ul>
     </div>
   </div>
 
   <!-- SERVICES / PILLARS -->
-  <section id="services">
+  <section id="services" class="fade-in">
     <div class="section-inner">
       <div class="pillars-header">
         <div>
           <div class="section-eyebrow">What We Build</div>
-          <h2>Four Systems.<br/>One Growth Engine.</h2>
+          <h2>Four Agents.<br/>One Revenue Engine.</h2>
         </div>
-        <p class="section-sub" style="margin-bottom:0;">We don't sell software. We build done-for-you AI workflows, tuned to your business, your customers, and your voice — then run them for you.</p>
+        <p class="section-sub" style="margin-bottom:0;">We don't sell software or run ads. We build done-for-you AI agents trained on your brand, your products, and your customers — then run them for you on a pure performance basis.</p>
       </div>
 
       <div class="pillars">
+
+        <!-- Agent 01: Customer Acquisition -->
         <div class="pillar-card">
+          <span class="pillar-icon">🎯</span>
           <div class="pillar-num">01</div>
-          <h3>Lead Generation</h3>
-          <p>AI agents identify and qualify your ideal customers, reach out automatically, and follow up until they're ready to buy. Your pipeline fills itself.</p>
+          <h3>Customer Acquisition Agent</h3>
+          <p>Finds and converts new buyers for your brand around the clock — through influencer outreach, partnership discovery, and targeted cold audience sequences that bring qualified traffic without paid ad spend.</p>
+          <ul class="pillar-bullets">
+            <li>Identifies influencers, affiliates &amp; brand partners in your niche</li>
+            <li>Sends personalized outreach to build your referral pipeline</li>
+            <li>Runs cold email sequences targeting your ideal buyer profile</li>
+            <li>Delivers warm, ready-to-buy prospects directly to your store</li>
+          </ul>
+          <div class="pillar-result">New buyers coming in — without pouring more money into ads.</div>
           <span class="pillar-tag">Always Prospecting</span>
         </div>
+
+        <!-- Agent 02: Brand Content -->
         <div class="pillar-card">
+          <span class="pillar-icon">📣</span>
           <div class="pillar-num">02</div>
-          <h3>Online Marketing</h3>
-          <p>Consistent, on-brand content across social, email, and ads — written, scheduled, and optimized by AI so you never stare at a blank page again.</p>
-          <span class="pillar-tag">Hands-Free Content</span>
+          <h3>Brand Content Agent</h3>
+          <p>Writes, schedules, and publishes content in your exact brand voice across every channel — product launches, promos, email campaigns, and ads — so you stay top-of-mind without staring at a blank screen.</p>
+          <ul class="pillar-bullets">
+            <li>Creates product drop &amp; promo content for Instagram, TikTok &amp; Facebook</li>
+            <li>Writes email campaigns for launches, sales &amp; seasonal pushes</li>
+            <li>Generates and A/B tests Meta &amp; Google ad copy continuously</li>
+            <li>Schedules and publishes your full content calendar automatically</li>
+          </ul>
+          <div class="pillar-result">Your brand stays loud and consistent — completely hands-free.</div>
+          <span class="pillar-tag">Content on Autopilot</span>
         </div>
+
+        <!-- Agent 03: Retention & Revenue -->
         <div class="pillar-card">
+          <span class="pillar-icon">💰</span>
           <div class="pillar-num">03</div>
-          <h3>Upselling</h3>
-          <p>AI reads your customer behavior and delivers the right offer at the right moment — converting one-time buyers into loyal, high-value repeat customers.</p>
+          <h3>Retention &amp; Revenue Agent</h3>
+          <p>Recovers the revenue your store is already losing — abandoned carts, lapsed customers, and missed upsells — by delivering the right message at the exact right moment, automatically.</p>
+          <ul class="pillar-bullets">
+            <li>Fires abandoned cart recovery sequences within minutes of exit</li>
+            <li>Sends post-purchase upsells &amp; cross-sells timed to buying behavior</li>
+            <li>Reactivates lapsed customers with personalized win-back campaigns</li>
+            <li>Builds subscription &amp; loyalty upgrade paths to maximize LTV</li>
+          </ul>
+          <div class="pillar-result">The average brand recovers 10–20% of abandoned carts. We aim higher.</div>
           <span class="pillar-tag">Revenue Per Customer</span>
         </div>
+
+        <!-- Agent 04: Customer Engagement -->
         <div class="pillar-card">
+          <span class="pillar-icon">💬</span>
           <div class="pillar-num">04</div>
-          <h3>Appointment Setting</h3>
-          <p>AI handles every inquiry, qualifies each lead, and books directly onto your calendar. No back-and-forth. No no-shows. Just confirmed appointments.</p>
-          <span class="pillar-tag">Fully Automated</span>
+          <h3>Customer Engagement Agent</h3>
+          <p>Responds to every customer inquiry, support question, and DM in seconds — in your brand voice — turning conversations into conversions and support tickets into upsell opportunities.</p>
+          <ul class="pillar-bullets">
+            <li>Handles customer questions via website chat, email &amp; social DMs instantly</li>
+            <li>Converts support interactions into product recommendations &amp; upsells</li>
+            <li>Follows up post-purchase to drive reviews, referrals &amp; repeat orders</li>
+            <li>Routes wholesale &amp; partnership inquiries to close more B2B deals</li>
+          </ul>
+          <div class="pillar-result">Every conversation becomes a revenue opportunity — 24/7.</div>
+          <span class="pillar-tag">Always Responsive</span>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="how-bg" id="process">
+  <section class="how-bg fade-in" id="process">
     <div class="section-inner">
       <div class="section-eyebrow">The Process</div>
       <h2 style="color:var(--cream);margin-bottom:12px;">Live in Days,<br/>Not Months.</h2>
-      <p class="section-sub">We handle the entire setup. You approve. We deploy. You grow.</p>
+      <p class="section-sub">We handle everything — setup, integration, and management. You approve. We deploy. Your store grows.</p>
 
       <div class="steps">
         <div class="step">
           <div class="step-num">01</div>
-          <h3>Discovery Call</h3>
-          <p>We map your process, find the bottlenecks, and pinpoint which AI systems will move the needle fastest for your specific business.</p>
+          <h3>Revenue Audit</h3>
+          <p>We connect to your store data and identify exactly where revenue is leaking — abandoned carts, lapsed customers, untouched email lists — and build a custom recovery plan.</p>
         </div>
         <div class="step">
           <div class="step-num">02</div>
-          <h3>Custom Build</h3>
-          <p>We build your workflows from scratch — tailored to your niche, your offer, and your brand voice. Nothing is templated.</p>
+          <h3>Agent Build</h3>
+          <p>We build your AI agents from scratch — trained on your brand voice, your product catalog, and your customer data. We integrate directly with Shopify, Klaviyo, and your existing stack.</p>
         </div>
         <div class="step">
           <div class="step-num">03</div>
-          <h3>Launch & Handoff</h3>
-          <p>Everything goes live. We walk you through your dashboard. Your agents start working from day one.</p>
+          <h3>Launch & Activate</h3>
+          <p>Your agents go live. Abandoned cart flows fire. Content publishes. Outreach sends. You get a live dashboard showing exactly what revenue your agents are generating.</p>
         </div>
         <div class="step">
           <div class="step-num">04</div>
           <h3>Optimize & Scale</h3>
-          <p>We monitor, tune, and improve your systems continuously so they get smarter — and more effective — as your business grows.</p>
+          <p>We monitor performance daily, tune messaging, and layer in new sequences as your brand grows — so the system compounds over time instead of plateauing.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- WHO IT'S FOR -->
-  <section class="for-bg">
+  <section class="for-bg fade-in">
     <div class="section-inner">
       <div class="for-grid">
         <div>
           <div class="section-eyebrow">Who It's For</div>
-          <h2>Built for Small Businesses Ready to Scale.</h2>
-          <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-top:16px;">If you're doing $5K–$500K/year and growth is being held back by your own capacity, David Delivers was built for you.</p>
+          <h2>Built for Online Brands Doing $500K–$10M a Year.</h2>
+          <p style="color:var(--muted);font-size:1rem;line-height:1.8;margin-top:16px;">If you have an existing customer base, a product people love, and revenue that should be higher — we were built for you. Click your brand type below.</p>
         </div>
         <div>
-          <div class="niches">
-            <span class="niche-tag">Restaurants & Cafes</span>
-            <span class="niche-tag">Salons & Spas</span>
-            <span class="niche-tag">Contractors & Trades</span>
-            <span class="niche-tag">Health & Wellness</span>
-            <span class="niche-tag">Real Estate Agents</span>
-            <span class="niche-tag">Law & Accounting</span>
-            <span class="niche-tag">E-commerce Stores</span>
-            <span class="niche-tag">Coaches & Consultants</span>
-            <span class="niche-tag">Cleaning Services</span>
-            <span class="niche-tag">Photographers</span>
-            <span class="niche-tag">Pet Services</span>
-            <span class="niche-tag">Landscaping</span>
-            <span class="niche-tag">Auto Services</span>
-            <span class="niche-tag">Financial Advisors</span>
-            <span class="niche-tag">And many more →</span>
+          <div class="niches" id="nicheContainer">
+            <span class="niche-tag" data-niche="shopify">Shopify Brands</span>
+            <span class="niche-tag" data-niche="dtc">DTC / Direct-to-Consumer</span>
+            <span class="niche-tag" data-niche="subscription">Subscription Boxes</span>
+            <span class="niche-tag" data-niche="amazon">Amazon FBA Sellers</span>
+            <span class="niche-tag" data-niche="coaches">Online Coaches &amp; Experts</span>
+            <span class="niche-tag" data-niche="courses">Course Creators</span>
+            <span class="niche-tag" data-niche="beauty">Beauty &amp; Skincare</span>
+            <span class="niche-tag" data-niche="supplements">Health &amp; Supplements</span>
+            <span class="niche-tag" data-niche="apparel">Apparel &amp; Fashion</span>
+            <span class="niche-tag" data-niche="pet">Pet Brands</span>
+            <span class="niche-tag" data-niche="home">Home &amp; Living</span>
+            <span class="niche-tag" data-niche="medspa">Med Spas</span>
+            <span class="niche-tag" data-niche="dental">Dental Practices</span>
+            <span class="niche-tag" data-niche="lawfirm">Law Firms</span>
+          </div>
+          <div class="niche-detail" id="nicheDetail">
+            <h4 id="nicheTitle"></h4>
+            <ul id="nicheList"></ul>
+          </div>
+          <p style="color:var(--brown-warm);font-size:0.82rem;font-weight:600;margin-top:16px;letter-spacing:0.5px;">Click your brand type to see how we help →</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="fade-in">
+    <div class="section-inner">
+      <div class="section-eyebrow">Frequently Asked Questions</div>
+      <h2>Questions? We've Got<br/>Answers.</h2>
+      <p class="section-sub">Everything you need to know before getting started.</p>
+
+      <div class="faq-grid">
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>How much does it cost?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Nothing upfront — ever. We take a small percentage of the new revenue our agents generate for your store. If we don't grow your revenue, you owe us nothing. The risk is entirely on us.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>How do you connect to my Shopify store?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We integrate directly via Shopify's API — no plugins to install, no code to touch. We also connect to Klaviyo, Postscript, and your existing email/SMS stack so everything works inside your current setup.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>How fast will I see results?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Abandoned cart and win-back flows typically generate revenue within the first week of going live. Full results from all four agents compound over 60–90 days. We move fast because we don't get paid until you do.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>I'm already running Klaviyo flows. Will this conflict?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>No — we audit what you already have, plug the gaps, and enhance your existing flows rather than replace them. Most brands we work with have basic flows running but are missing the personalization and timing that actually converts.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>How do you track what revenue you generated?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>You get a live dashboard showing every dollar our agents recover and generate — with full attribution. Revenue from abandoned cart recovery, win-back campaigns, upsells, and new customer acquisition is tracked separately so you always know exactly what you're paying for.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>Do you work with Amazon FBA sellers?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes — we specialize in helping FBA sellers build off-Amazon revenue through email list building, DTC storefronts, and content that drives external traffic. Reducing your Amazon dependency is one of the highest-ROI moves a seller can make.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>Is there a contract?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We ask for a 3-month commitment so our agents have time to build, learn, and optimize. After that it's month-to-month — cancel anytime, no questions asked.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>Will my customers know it's AI?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>No — every message is written in your brand voice, your tone, and your style. We spend time during onboarding learning how your brand communicates, because one robotic message can cost you a customer for life.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>How is this different from a marketing agency?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Agencies charge $3K–$10K/month whether they deliver or not — and most focus on driving new traffic while ignoring the revenue you're already leaking. We focus on monetizing what you already have, and we only get paid when we succeed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            <h3>What if it doesn't work?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Then you don't pay. Our entire fee is a percentage of new revenue we generate — if the agents don't produce, we earn nothing. We've structured it this way on purpose: the only way we win is if you win first.</p>
           </div>
         </div>
       </div>
@@ -650,22 +1063,25 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section id="waitlist" style="padding:100px 60px;">
+  <section id="waitlist" class="fade-in" style="padding:100px 60px;">
     <div class="section-inner">
       <div class="cta-inner">
         <div class="cta-left">
           <div class="section-eyebrow">Limited Spots Available</div>
-          <h2>Be One of Our<br/>Founding Clients.</h2>
-          <p>We're onboarding a small group of founding clients right now. Join the waitlist today to secure founding member pricing and priority onboarding — before we open to the public.</p>
+          <h2>Let's Find Your<br/>Hidden Revenue.</h2>
+          <p>Book a free 10-minute Revenue Recovery Audit. We'll connect to your store data, identify exactly where revenue is leaking, and show you which agents will recover it first — no commitment, no pitch.</p>
         </div>
         <div class="cta-right">
-          <p style="font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--brown-warm);margin-bottom:24px;">Secure Your Spot</p>
-          <form class="waitlist-form" id="wlForm2">
-            <input type="email" name="email" placeholder="Your business email" required autocomplete="email" />
-            <button type="submit">Join the Waitlist</button>
-          </form>
-          <div class="success-msg" id="successMsg2">✓ You're in. We'll reach out within 24 hours.</div>
-          <p class="form-note">Founding member pricing locked in at signup.</p>
+          <p style="font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--brown-warm);margin-bottom:24px;">Free Revenue Audit</p>
+          <a href="" onclick="Calendly.initPopupWidget({url: CALENDLY_URL});return false;" class="nav-cta" style="display:block;text-align:center;padding:16px;font-size:0.85rem;font-weight:800;letter-spacing:1.5px;margin-bottom:20px;">Book Your Free Audit</a>
+          <div style="border-top:1px solid var(--border);padding-top:20px;">
+            <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-bottom:12px;">Not ready to talk? Join the waitlist:</p>
+            <form class="waitlist-form" id="wlForm2">
+              <input type="email" name="email" placeholder="Your store email" required autocomplete="email" />
+              <button type="submit">Join Waitlist</button>
+            </form>
+            <div class="success-msg" id="successMsg2">✓ You're in. We'll reach out within 24 hours.</div>
+          </div>
         </div>
       </div>
     </div>
@@ -673,11 +1089,13 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 <strong>David Delivers</strong>. All rights reserved. AI-powered growth for small business.</p>
+    <p>&copy; 2026 <strong>David Delivers</strong>. All rights reserved. AI-powered revenue growth for e-commerce &amp; online brands.</p>
   </footer>
 
   <script>
     const ACCESS_KEY = 'e275bc38-5a3c-4269-b6a4-4ceb752d6b0b';
+    // Calendly booking link
+    const CALENDLY_URL = 'https://calendly.com/davidjohnhasselberger/10-minute-call';
 
     function handleForm(formId, successId) {
       const form    = document.getElementById(formId);
@@ -721,12 +1139,167 @@
     handleForm('wlForm',  'successMsg');
     handleForm('wlForm2', 'successMsg2');
 
+    // Niche detail data
+    const nicheData = {
+      shopify: {
+        title: 'Shopify Brands',
+        points: [
+          'We integrate directly with your Shopify store — abandoned cart flows fire within minutes, recovering the 77% of shoppers who leave without buying',
+          'Post-purchase sequences turn one-time buyers into repeat customers automatically, maximizing LTV without extra ad spend',
+          'Your content agent writes and schedules every product launch, promotion, and email campaign in your exact brand voice'
+        ]
+      },
+      dtc: {
+        title: 'DTC / Direct-to-Consumer',
+        points: [
+          'With CAC up 60%, we shift your focus from buying new customers to monetizing the ones you already have — far higher ROI',
+          'Win-back campaigns reactivate customers who haven\'t purchased in 60–90 days, recovering revenue you\'ve already paid to acquire',
+          'Your acquisition agent identifies influencers and affiliate partners in your niche, building a referral pipeline that grows without ad spend'
+        ]
+      },
+      subscription: {
+        title: 'Subscription Boxes',
+        points: [
+          'Churn prevention is everything in subscriptions — our retention agent identifies at-risk subscribers and sends personalized save offers before they cancel',
+          'Upgrade sequences automatically move subscribers from basic to premium tiers based on engagement signals and purchase history',
+          'Win-back campaigns re-engage cancelled subscribers with personalized offers, recovering revenue most brands write off permanently'
+        ]
+      },
+      amazon: {
+        title: 'Amazon FBA Sellers',
+        points: [
+          'We build your off-Amazon email list and DTC storefront — reducing your dependency on Amazon fees and algorithm changes',
+          'Our content agent drives external traffic to your listings through social and email, lowering your ACOS while increasing organic rank',
+          'Post-purchase sequences capture customer emails and build brand loyalty that survives any Amazon policy change'
+        ]
+      },
+      coaches: {
+        title: 'Online Coaches & Experts',
+        points: [
+          'Our engagement agent responds to every DM, comment, and inquiry in seconds — in your voice — so no lead slips through while you\'re on a call',
+          'Automated discovery call booking fills your calendar 24/7, with qualifying sequences that ensure every call is with a serious buyer',
+          'Follow-up sequences after free calls close the gap between "I\'ll think about it" and "Let\'s do it" — automatically'
+        ]
+      },
+      courses: {
+        title: 'Course Creators',
+        points: [
+          'Launch sequences drive maximum enrollment during your open cart — with urgency messaging, objection handling, and deadline reminders on autopilot',
+          'Our content agent writes all your launch content: emails, social posts, ads, and webinar follow-ups in your exact voice',
+          'Post-purchase upsell sequences move buyers from your entry course to your premium program, dramatically increasing revenue per student'
+        ]
+      },
+      beauty: {
+        title: 'Beauty & Skincare',
+        points: [
+          'Replenishment reminders go out automatically when customers are due to reorder — recovering the recurring revenue most brands leave to chance',
+          'Personalized product recommendations based on past purchases drive cross-sells that feel helpful, not pushy',
+          'Our content agent creates scroll-stopping social content for every new product drop, serum launch, and seasonal campaign'
+        ]
+      },
+      supplements: {
+        title: 'Health & Supplements',
+        points: [
+          'Subscription conversion sequences turn one-time buyers into subscribe-and-save customers, stabilizing your monthly revenue',
+          'Results-based follow-ups at the 2-week and 30-day mark keep customers engaged, collect testimonials, and drive repeat purchases',
+          'Our acquisition agent identifies health influencers and wellness communities that match your customer profile, building partnerships that drive qualified traffic'
+        ]
+      },
+      apparel: {
+        title: 'Apparel & Fashion',
+        points: [
+          'New drop hype sequences build anticipation before launch and fire purchase prompts the moment inventory goes live',
+          'Browse abandonment flows re-engage shoppers who viewed products but didn\'t add to cart — capturing intent before it fades',
+          'Size and style-based segmentation means every customer gets product recommendations that actually fit their preferences'
+        ]
+      },
+      pet: {
+        title: 'Pet Brands',
+        points: [
+          'Replenishment reminders for food, treats, and supplies go out automatically based on typical consumption cycles — driving predictable repeat revenue',
+          'Our content agent creates pet-focused social content that drives engagement and builds the community loyalty pet brands thrive on',
+          'Post-purchase sequences request photos and reviews, building the user-generated content that converts browsers into buyers'
+        ]
+      },
+      home: {
+        title: 'Home & Living',
+        points: [
+          'Seasonal campaigns run automatically — home refresh content in spring, gifting sequences in Q4, and new year redecorating pushes in January',
+          'Room-based cross-sell sequences suggest complementary products to customers who just purchased, increasing average order value without extra traffic',
+          'Our content agent writes lifestyle-focused email and social content that positions your brand as a home authority, building long-term loyalty'
+        ]
+      },
+      medspa: {
+        title: 'Med Spas',
+        points: [
+          'AI books appointments 24/7 and sends automated reminders — eliminating no-shows and filling cancellations before your front desk even opens',
+          'Lapsed patient win-back campaigns reactivate clients who haven\'t visited in 60+ days with personalized, timely offers',
+          'Post-treatment upsell sequences introduce complementary services — Botox clients become filler clients, filler clients become full members'
+        ]
+      },
+      dental: {
+        title: 'Dental Practices',
+        points: [
+          'AI responds to every new patient inquiry instantly, books consultations directly onto your calendar, and confirms appointments automatically',
+          'Recall campaigns bring back overdue patients with personalized reminders — filling your hygiene schedule without your team making a single call',
+          'Treatment plan follow-ups re-engage patients who were quoted a procedure but haven\'t scheduled, converting pending revenue into booked appointments'
+        ]
+      },
+      lawfirm: {
+        title: 'Law Firms',
+        points: [
+          'Every inquiry gets an immediate, professional response that qualifies the case and books a consultation — before the prospect calls your competitor',
+          'AI filters out unqualified inquiries and delivers only serious, pre-qualified consultations to your attorneys\' calendars',
+          'Past client follow-ups generate referrals and repeat business automatically — the highest-ROI channel most firms completely ignore'
+        ]
+      }
+    };
+
+    // Niche click handler
+    document.querySelectorAll('.niche-tag[data-niche]').forEach(tag => {
+      tag.addEventListener('click', () => {
+        const key = tag.dataset.niche;
+        const data = nicheData[key];
+        if (!data) return;
+
+        // Toggle active state
+        const wasActive = tag.classList.contains('active');
+        document.querySelectorAll('.niche-tag').forEach(t => t.classList.remove('active'));
+
+        const detail = document.getElementById('nicheDetail');
+        if (wasActive) {
+          detail.classList.remove('show');
+          return;
+        }
+
+        tag.classList.add('active');
+        document.getElementById('nicheTitle').textContent = 'How We Help: ' + data.title;
+        const list = document.getElementById('nicheList');
+        list.innerHTML = data.points.map(p => '<li>' + p + '</li>').join('');
+        detail.classList.remove('show');
+        void detail.offsetWidth; // restart animation
+        detail.classList.add('show');
+      });
+    });
+
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         e.preventDefault();
         document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
       });
     });
+
+    // Scroll fade-in observer
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    fadeEls.forEach(el => fadeObserver.observe(el));
   </script>
 
 </body>
